@@ -1,8 +1,6 @@
 package gpacalculator;
 
 import java.io.File;
-import java.util.Map;
-
 import gpacalculator.GpaCalculator.Grades;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -14,8 +12,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Separator;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -26,7 +22,7 @@ public class UserUI extends Application {
 	Scene firstScene;
 	Scene thirdScene;
 	static Label test;
-	private TableView table1 = new TableView();
+
 	public static void main(String[] args){
 		launch(args);
 	}
@@ -65,7 +61,8 @@ public class UserUI extends Application {
 	 				}
 
 
-	 			} else heading.setText("Please put a valid file path for the Text File");
+	 			} else heading.setText("Please make sure the file path to textfile is valid and ends with extension"
+	 					+ " '.txt'.");
 	 		}
 	 	});
 
@@ -77,7 +74,7 @@ public class UserUI extends Application {
 	    grid.setPadding(new Insets(0, 10, 0, 10));
 		//FlowPane rootNode1 = new FlowPane(Orientation.VERTICAL,10,10);
 		//rootNode1.setAlignment(Pos.CENTER);
-		 secondScene= new Scene(grid,700,200);
+		 secondScene= new Scene(grid,700,300);
 
 		test = new Label("Current Scores");
 		grid.add(test,0,1,9,1);
@@ -87,14 +84,14 @@ public class UserUI extends Application {
 		grid.add(test1,0,3,10,5);
 		Label instruction = new Label("'Calculate GPA' will calculate GPA of the current course list"
 				+ ". 'Target GPA' will"+"\n tell you how you can improve your grade for any of these courses");
-		grid.add(instruction,4,9);
+		grid.add(instruction,4,10);
 
 		Button btnGPA = new Button("Calculate GPA");
-		grid.add(btnGPA,1,9);
+		grid.add(btnGPA,1,10);
 		btnGPA.setOnAction( (ae) -> instruction.setText(String.valueOf(GpaCalculator.getSemesterGpa())));
 
 		Button btnTargetGrade = new Button("Target Grade");
-		grid.add(btnTargetGrade,2,9);
+		grid.add(btnTargetGrade,2,10);
 		btnTargetGrade.setOnAction( (ae) -> primaryStage.setScene(thirdScene) );
 
 
@@ -105,20 +102,20 @@ public class UserUI extends Application {
 	    grid2.setPadding(new Insets(0, 10, 0, 10));
 	    thirdScene= new Scene(grid2,700,350);
 
-	    grid2.add(test3,0,0,8,6);
+	    grid2.add(test3,0,0,8,8);
 
 	    TextField courseName = new TextField();
 	    courseName.setPromptText("Enter course");
-	    grid2.add(courseName,0,9);
+	    grid2.add(courseName,0,10);
 	    TextField assignmentName = new TextField();
 	    assignmentName.setPromptText("Enter Assignment");
-	    grid2.add(assignmentName,2,9);
+	    grid2.add(assignmentName,2,10);
 	    TextField moreAssignment = new TextField();
 	    moreAssignment.setPromptText("Enter how many more Assignments");
-	    grid2.add(moreAssignment,4,9);
+	    grid2.add(moreAssignment,4,10);
 	    TextField target = new TextField();
 	    target.setPromptText("Enter Target Score");
-	    grid2.add(target,6,9);
+	    grid2.add(target,6,10);
 
 	    Label targetInstruction = new Label("Enter course name, Assignment type, number of remaining assignments "
 	    		+ "left, and the grade that you want to acheive.\n For example, if in Calculus, a student had"
