@@ -184,7 +184,8 @@ public class GpaCalculator {
 
 			}
 			if (sumOfPer != 100) {
-				System.out.println("ERROR! Please put correct %");
+				UserUI.test.setText("Error: Check input file to make sure all the percentages for "
+						+ "each assignment add to 100 in each course");
 			}
 			for (int i = 0; i < courseInfo.length; i++) {
 				if (Arrays.asList(ASSIGNMENTTYPE).contains(courseInfo[i])) {

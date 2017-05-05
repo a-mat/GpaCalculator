@@ -25,6 +25,7 @@ public class UserUI extends Application {
 	Scene secondScene;
 	Scene firstScene;
 	Scene thirdScene;
+	static Label test;
 	private TableView table1 = new TableView();
 	public static void main(String[] args){
 		launch(args);
@@ -48,19 +49,23 @@ public class UserUI extends Application {
 	 		public void handle(ActionEvent ae){
 	 			File a = new File(input.getText());
 	 			if(a.isFile()){
-	 			 GpaCalculator.loadCourse(input.getText()); //passes the pathname to anotherclass that reads
-	 						// the text file and returns a double nested hashmap containing courses and grades
-
+	 				try{GpaCalculator.loadCourse(input.getText());
 	 					String test2 = new String();
 
 	 					for (String key : GpaCalculator.courseList.keySet()) {
-	 						 test2 += String.valueOf(key+" "+ GpaCalculator.courseList.get(key))+"\n";
+	 						test2 += String.valueOf(key+" "+ GpaCalculator.courseList.get(key))+"\n";
 	 						test1.setText(test2);
 	 						test3.setText(test2);
 	 					}
 
-	 			 primaryStage.setScene(secondScene);
-	 			} else heading.setText("Please put a valid file path");
+	 					primaryStage.setScene(secondScene);
+	 				} //passes the pathname to anotherclass that reads
+	 				catch(Exception e){
+	 					heading.setText("The text file is not in the correct format. Please consult the ReadMe");
+	 				}
+
+
+	 			} else heading.setText("Please put a valid file path for the Text File");
 	 		}
 	 	});
 
@@ -74,8 +79,8 @@ public class UserUI extends Application {
 		//rootNode1.setAlignment(Pos.CENTER);
 		 secondScene= new Scene(grid,700,200);
 
-		Label test = new Label("Current Scores");
-		grid.add(test,2,1);
+		test = new Label("Current Scores");
+		grid.add(test,0,1,9,1);
 		Separator separator = new Separator();
 		separator.setPrefWidth(180);
 		grid.add(separator,1,2,8,2);
