@@ -1,6 +1,6 @@
 package gpacalculator;
 
-
+import java.io.File;
 import java.util.Map;
 
 import gpacalculator.GpaCalculator.Grades;
@@ -42,10 +42,12 @@ public class UserUI extends Application {
 		TextField input = new TextField();
 		Button btnCheck = new Button("Check");
 		rootNode.getChildren().addAll(heading,input,btnCheck, example);
-		Label test1 = new Label("");
-		Label test3 = new Label("");
+		Label test1 = new Label(""); //courseList for the second scene
+		Label test3 = new Label("");//copies the courseList for the third scene
 		btnCheck.setOnAction(new EventHandler<ActionEvent>(){
 	 		public void handle(ActionEvent ae){
+	 			File a = new File(input.getText());
+	 			if(a.isFile()){
 	 			 GpaCalculator.loadCourse(input.getText()); //passes the pathname to anotherclass that reads
 	 						// the text file and returns a double nested hashmap containing courses and grades
 
@@ -57,7 +59,8 @@ public class UserUI extends Application {
 	 						test3.setText(test2);
 	 					}
 
-	 			primaryStage.setScene(secondScene);
+	 			 primaryStage.setScene(secondScene);
+	 			} else heading.setText("Please put a valid file path");
 	 		}
 	 	});
 
@@ -138,4 +141,4 @@ public class UserUI extends Application {
 	}
 
 }
-test
+//C:\Users\oonni\workspace\ideas\src\gpacalculator\course_grades

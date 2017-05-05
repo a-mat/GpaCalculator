@@ -1,0 +1,93 @@
+[33mcommit 5b3cbd58c70b9eaf55a300efde890ac5e9f2da44[m
+Merge: 1e24576 86b0c3c
+Author: June <aomathew94@gmail.com>
+Date:   Fri May 5 10:57:25 2017 -0400
+
+    Merge remote-tracking branch 'refs/remotes/origin/master' into UI_JavaFX
+
+[33mcommit 86b0c3c15f0c1e1126f2786bec9dd90d4bfc49c6[m
+Merge: 0ebd024 38ef712
+Author: June <aomathew94@gmail.com>
+Date:   Fri May 5 10:53:57 2017 -0400
+
+    Merge pull request #2 from herewego94/UI_JavaFX
+    
+    Ui java fx
+
+[33mcommit 1e2457657ae6c2941cd59a145bf06322734d4831[m
+Author: June <aomathew94@gmail.com>
+Date:   Fri May 5 10:49:27 2017 -0400
+
+     test to make sure merge worked
+
+[33mcommit 38ef71279494790dfd02b63fb63c0b42ed719991[m
+Merge: cabd54c 0ebd024
+Author: June <aomathew94@gmail.com>
+Date:   Fri May 5 00:12:39 2017 -0400
+
+    Merge remote-tracking branch 'refs/remotes/origin/master' into UI_JavaFX
+    
+    # Conflicts:
+    #       src/gpacalculator/UserUI.java
+
+[33mcommit cabd54c9fdff20277155f8dbf295511181678738[m
+Author: June <aomathew94@gmail.com>
+Date:   Thu May 4 23:46:10 2017 -0400
+
+    removed last comment
+
+[33mcommit 533939baa22a2473c3e5400c4f4eeef2bc9390ef[m
+Author: June <aomathew94@gmail.com>
+Date:   Thu May 4 23:42:20 2017 -0400
+
+    Revert "comment out of class was removed and file check was placed"
+    
+    This reverts commit d546a94a81fb2b6e07aec04d50f92f7c7ba7c20f.
+
+[33mcommit d546a94a81fb2b6e07aec04d50f92f7c7ba7c20f[m
+Author: June <aomathew94@gmail.com>
+Date:   Thu May 4 23:40:51 2017 -0400
+
+    comment out of class was removed and file check was placed
+
+[33mcommit 33c3de4f3063c062d6c7cf360f49028ea5bb6ff1[m
+Author: June <aomathew94@gmail.com>
+Date:   Thu May 4 23:04:04 2017 -0400
+
+    UI is complete, but bugs have to be worked out
+
+[33mcommit d6a2a7b81a7af86835d8d25d3c6e06e534d5684d[m
+Author: June <aomathew94@gmail.com>
+Date:   Thu May 4 20:44:43 2017 -0400
+
+    basic UI, grades show but no gpa button yet
+
+[33mcommit 0ebd024f441394ccd5be7905d62e11df91906c17[m
+Author: June <aomathew94@gmail.com>
+Date:   Tue May 2 14:26:11 2017 -0400
+
+    UI class added
+
+[33mcommit b1f3ce5064d61244bea3b085c68a9c72c52f6f70[m
+Author: June <aomathew94@gmail.com>
+Date:   Thu Apr 27 16:42:25 2017 -0400
+
+    test UI
+
+[33mcommit 7f739fa472b573d3fabee9812e947003ef9cdbdf[m
+Author: June <aomathew94@gmail.com>
+Date:   Mon Apr 24 12:52:46 2017 -0400
+
+    moved readme out of src
+
+[33mcommit 8702f240528bd7a6da1fbaaabbdf2c6025bd9f99[m
+Author: June <aomathew94@gmail.com>
+Date:   Mon Apr 24 12:47:29 2017 -0400
+
+     second batch
+
+[33mcommit 8d17a093899c6b6931efa5cc590178a87a7f9cfd[m
+Author: June <aomathew94@gmail.com>
+Date:   Mon Apr 24 12:40:02 2017 -0400
+
+    :space_invader: Added .gitattributes & .gitignore files
