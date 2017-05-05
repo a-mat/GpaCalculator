@@ -1,0 +1,6 @@
+3 Biology_114 Test 30 90 80 Quiz 20 74 80 90 Homework 50 88 100 80 90 50 90
+3 Calc_1 Test 50 100 85 Quiz 20 88 75 82 90 Homework 30 95 85 100 85
+4 Chemistry_213 Test 20 80 85 81 Quiz 50 70 82 65 75 Homework 30 85 95 75 72
+3 Intro_History Test 30 90 80 Quiz 20 74 80 90 Homework 50 88 100 80 90 50 90
+3 School_of_Rock Test 50 100 85 Quiz 20 88 75 82 90 Homework 30 95 85 100 85
+4 Coding_for_Noobs Test 20 80 85 81 Quiz 50 70 82 65 75 Homework 30 85 95 75 72
