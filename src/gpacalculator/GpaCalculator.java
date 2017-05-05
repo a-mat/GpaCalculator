@@ -7,7 +7,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 /**
  *
@@ -221,6 +220,9 @@ public class GpaCalculator {
 		 */
 		static String targetGrade(String course, String assignment,
 				int moreAssignments, double targetScore) {
+			if(courseList.containsKey(course) && courseList.get(course).containsKey(assignment)){
+
+
 			int number = mapOfGradeCounter.get(course).get(assignment);
 			double sum = number * (courseList.get(course).get(assignment));
 			number += moreAssignments;
@@ -228,70 +230,25 @@ public class GpaCalculator {
 			newsum -= sum;
 			double neededGrades = newsum / moreAssignments;
 			String results= new String("");
-			if (neededGrades > 100) {
-				results="you would need a score of at least "
-						+ neededGrades + " to get the desired grade. Check to"
-						+ " see if extra credit is avaialble.";
-			} else if (neededGrades < 0) {
+				if (neededGrades > 100) {
+					results="you would need a score of at least "
+							+ neededGrades + " to get the desired grade. Check to"
+							+ " see if extra credit is avaialble.";
+				} else if (neededGrades < 0) {
 				results="Error. A negative grade of " + neededGrades
-						+ " to get the score desired.";
-			} else {
-				results="You need a score of at least "
-						+ neededGrades + " in the next " + moreAssignments
-						+ " " + assignment + "s  to get a " + targetScore
-						+ " average.";
+							+ " to get the score desired.";
+				}else {
+					results="You need a score of at least "
+							+ neededGrades + " in the next " + moreAssignments
+							+ " " + assignment + "s  to get a " + targetScore
+							+ " average.";
+				}
+				return results;
 			}
-			return results;
+			else {return "Make sure you entered the correct course and assignment";
+			}
 		}
 	}
-
-
-	//public static void main(String[] args) {
-		// ignore commented methods. just here for troubleshoot
-	//	loadCourse("C:\\Users\\oonni\\workspace\\ideas\\src\\gpacalculator\\course_grades");
-		//System.out.println(print());
-		//System.out.println(courseList);
-
-
-	/*	Scanner scn = new Scanner(System.in);
-
-		System.out
-				.println("Please input the AbsolutePath of the input Text File");
-		String courseGradeFile = scn.nextLine();
-		loadCourse(courseGradeFile);
-		for (String key : courseList.keySet()) {
-			System.out.println(key + " :");
-			System.out.println(courseList.get(key));
-		}
-		System.out
-				.println("Enter 1 for grade emprovement. Enter 2 calculate the GPA for the "
-						+ "semester ");
-		int choice = scn.nextInt();
-		while (choice != 1 && choice != 2) {
-			System.out.println("Please click 1 or 2");
-		}
-
-		switch (choice) {
-		case 1:
-			System.out
-					.println("Enter the Course and Assignment in which you want to improve");
-			String course = scn.next();
-			String Assignment = scn.next();
-			System.out
-					.println("Enter the ammount of more assignments are left in the course"
-							+ " and the average that you want to aim for");
-			int moreAssignments = scn.nextInt();
-			int targetScore = scn.nextInt();
-			Grades.targetGrade(course, Assignment, moreAssignments, targetScore);
-			break;
-
-		case 2:
-			System.out.println("Your GPA for the semester is");
-			getSemesterGpa();
-			break;
-		}
-		scn.close();*/
-	//}
 
 
 }
