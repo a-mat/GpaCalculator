@@ -137,4 +137,3 @@ public class UserUI extends Application {
 	}
 
 }
-//C:\Users\oonni\workspace\ideas\src\gpacalculator\course_grades
