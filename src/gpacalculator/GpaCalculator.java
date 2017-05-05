@@ -10,12 +10,12 @@ import java.util.Map;
 import java.util.Scanner;
 
 /**
- * 
+ *
  * GPA calculator that can calculate current grades in a course based on
  * returned grades. It relies on user input of their courses and grades in a
  * text file. There are two classes: GpaCaulculator and a nested Grades class.
- * 
- * 
+ *
+ *
  * to do: average for the semester edit fix average/make it its own method
  */
 public class GpaCalculator {
@@ -26,13 +26,13 @@ public class GpaCalculator {
 	 * average
 	 */
 	static Map<String, Map<String, Double>> courseList = new HashMap<>();
-	static Map<String, Map<String, Integer>> mapOfGradeCounter = new HashMap<>();
-	static Map<String,Integer> courseCredits = new HashMap<>();
+	 static Map<String, Map<String, Integer>> mapOfGradeCounter = new HashMap<>();
+	 static Map<String,Integer> courseCredits = new HashMap<>();
 	/**
 	 * loadCourse method uses reader to collect course info from a textfile and
 	 * returns them it in a map. It then calls loadGrade method from the Grades
 	 * class to fill the map with remaining grades in those courses.
-	 * 
+	 *
 	 * @param courseGradeFile
 	 *            The absolute path of the input file
 	 * @return courseList returns the grades and averages
@@ -63,17 +63,20 @@ public class GpaCalculator {
 		return courseList;
 
 	}
-
+	public static Map<String, Map<String, Double>> print(){
+		return courseList;
+	}
 	/**
-	 * this method returns GPA for the semester 
-	 * 
+	 * this method returns GPA for the semester
+	 * @return
+	 *
 	 */
-	
-	static void getSemesterGpa() {
+
+	static double getSemesterGpa() {
 		double average=0;
 		double sum = 0;
 		int counter = 0;
-		
+
 		for (Map.Entry<String, Map<String, Double>> course : courseList.entrySet()) {
 			average=course.getValue().get("Class Average");
 			 String name = course.getKey();
@@ -92,9 +95,9 @@ public class GpaCalculator {
 			} else {
 				counter += courseCredits.get(name);
 			}
-			
+
 		}
-		System.out.println(sum / counter);
+		return (sum / counter);
 	}
 
 	/*
@@ -120,7 +123,7 @@ public class GpaCalculator {
 		 * loadGrade populates the HashMap Grade list with the grades attained
 		 * in any of the assignments. It is can be used separate from the
 		 * loadCourse method as well
-		 * 
+		 *
 		 * @param course
 		 *            The name of the course that you want to load the
 		 *            information from
@@ -201,7 +204,7 @@ public class GpaCalculator {
 		 * This method tells the user what grades they should score in their
 		 * upcomming x amount of assignments in order to get the grade that the
 		 * user wanted.
-		 * 
+		 *
 		 * @param course
 		 *            name of the course that the student wants to inquire about
 		 * @param assignment
@@ -213,8 +216,9 @@ public class GpaCalculator {
 		 * @param targetScore
 		 *            The grade that they are trying to attain in said
 		 *            assignment
+		 * @return
 		 */
-		static void targetGrade(String course, String assignment,
+		static String targetGrade(String course, String assignment,
 				int moreAssignments, double targetScore) {
 			int number = mapOfGradeCounter.get(course).get(assignment);
 			double sum = number * (courseList.get(course).get(assignment));
@@ -222,27 +226,33 @@ public class GpaCalculator {
 			double newsum = number * targetScore;
 			newsum -= sum;
 			double neededGrades = newsum / moreAssignments;
+			String results= new String("");
 			if (neededGrades > 100) {
-				System.out.println("you would need a score of at least "
+				results="you would need a score of at least "
 						+ neededGrades + " to get the desired grade. Check to"
-						+ " see if extra credit is avaialble.");
+						+ " see if extra credit is avaialble.";
 			} else if (neededGrades < 0) {
-				System.out.println("Error. A negative grade of " + neededGrades
-						+ " to get the score desired.");
+				results="Error. A negative grade of " + neededGrades
+						+ " to get the score desired.";
 			} else {
-				System.out.println("You need a score of at least "
+				results="You need a score of at least "
 						+ neededGrades + " in the next " + moreAssignments
 						+ " " + assignment + "s  to get a " + targetScore
-						+ " average.");
+						+ " average.";
 			}
+			return results;
 		}
 	}
 
-	public static void main(String[] args) {
-		// ignopre commented methods. just here for troubleshoot
-		//loadCourse("C:\\Users\\oonni\\workspace\\ideas\\src\\gpacalculator\\course_grades");
+
+	//public static void main(String[] args) {
+		// ignore commented methods. just here for troubleshoot
+	//	loadCourse("C:\\Users\\oonni\\workspace\\ideas\\src\\gpacalculator\\course_grades");
+		//System.out.println(print());
 		//System.out.println(courseList);
-		Scanner scn = new Scanner(System.in);
+
+
+	/*	Scanner scn = new Scanner(System.in);
 
 		System.out
 				.println("Please input the AbsolutePath of the input Text File");
@@ -279,8 +289,10 @@ public class GpaCalculator {
 			getSemesterGpa();
 			break;
 		}
-		scn.close();
-	}
+		scn.close();*/
+	//}
+
 
 }
-"testyyyy"
+
+
