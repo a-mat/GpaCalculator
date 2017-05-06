@@ -25,6 +25,7 @@ public class UserUI extends Application {
 
 	public static void main(String[] args){
 		launch(args);
+
 	}
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -35,7 +36,7 @@ public class UserUI extends Application {
 		firstScene = new Scene(rootNode,600,200);
 		primaryStage.setScene(firstScene);
 		Label heading = new Label("Enter the Absolute Path of the file containing the grades");
-		Label example = new Label("ex) C:\\Users\\oonni\\workspace\\ideas\\src\\gpacalculator\\course_grades");
+		Label example = new Label("ex) C:\\Users\\oonni\\workspace\\ideas\\src\\gpacalculator\\course_grades.txt");
 		TextField input = new TextField();
 		Button btnCheck = new Button("Check");
 		rootNode.getChildren().addAll(heading,input,btnCheck, example);
@@ -126,11 +127,17 @@ public class UserUI extends Application {
 	    Button btnSubmit = new Button("Submit");
 	    btnSubmit.setOnAction(new EventHandler<ActionEvent>(){
 	 		public void handle(ActionEvent ae){
+
 	 			String course=courseName.getText();
 	 			String assignment = assignmentName.getText();
+	 			try{
 	 			int moreAssignments = Integer.valueOf(moreAssignment.getText());
 	 			double targerScore = Double.valueOf(target.getText());
 	 			targetInstruction.setText(Grades.targetGrade(course,assignment,moreAssignments,targerScore));
+	 			} catch(NumberFormatException e){
+	 				targetInstruction.setText("Make sure only number values are entered into 'More Assignments' and"
+	 						+ " 'Target Score' ");
+	 			}
 	 		}
 	    });
 	    grid2.add(btnSubmit,0,19);
@@ -143,3 +150,4 @@ public class UserUI extends Application {
 	}
 
 }
+//C:\Users\oonni\workspace\ideas\src\gpacalculator\course_grades
