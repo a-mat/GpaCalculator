@@ -1,6 +1,14 @@
-This GPA calculator requires user input from a textfile. Each line
-in the text has the course name, assignment type, assignment weight, and assignment
-grades all seperated by one space. The following line represents an example
+This GPA calculator allows you to GPA from scores received as well as giving you suggested grade improvement strategies to get a 
+  specific target score.
+
+How to Use
+This program reads the grades from a text file. Each line
+in the text has the course weight,course name, assignment type, assignment weight, and assignment
+grades all seperated by one space. The int value proceeding each assigment type, is the 
+assignment weight. Following the assignment weight, there can be any number of assignment grades enterd.
+The following line represents an example
+
+
 
 3 Biology Test 30 90 80 Quiz 20 50 80 90 Homework 50 5 10 20 30 40 50
 3 Calc Test 50 100 80 Quiz 20 88 50 30 50 Homework 30 5 10 20 30
@@ -13,4 +21,8 @@ assignment type( "Test" in this case) followed by the weight of the assignment(3
 Then the grades for the test are listed( 90 and 80). Then the next Assignment is typed
 ( Quiz at 20%) with its grades. This goes on for however many different assignments there are and 
 however many grades are put in. 
+
+This program also contains a grade improvement strategy. After grades are entered, the calculated GPA and course average are shown.
+To improve a certain grade, enter the assignment type that you want to improve and what grade you want in that. The program will tell you
+what grades you need to attain for the rest of the semester to get the desired grade.
 
